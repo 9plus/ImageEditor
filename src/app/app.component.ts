@@ -7,4 +7,17 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ImageEditor';
+
+  public imageSrc = '';
+
+  private isDragging = false;
+
+  onDropHandler(object) {
+    console.log('event ' + JSON.stringify(object));
+    this.imageSrc = object.event.target.result;
+  }
+
+  onDragHandler(value) {
+    this.isDragging = value;
+  }
 }
